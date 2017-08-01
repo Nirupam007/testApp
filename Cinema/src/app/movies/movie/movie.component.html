@@ -1,0 +1,33 @@
+<div class="card">
+
+    <a class="img-card" href="#">
+                    <img [src]="movie.MoviePoster" />
+                  
+                </a>
+    <br />
+    <div class="card-content">
+        <h4 class="card-title">
+            <a href="#">
+                            {{movie.Moviename}}
+                        </a>
+        </h4>
+        <div class="">
+            {{movie.Movielanguage}} {{movie.MovieRating}} {{movie.ShowTime}}
+        </div>
+    </div>
+    <div *ngIf="checked">
+        <input type="checkbox" class="checkbox" value="{{movie.MovieId}}" [checked]="movie.checked" (change)="getChecked(movie.MovieId,$)">
+    </div>
+    <div class="card-read-more">
+        <a class="btn btn-link " href="#" (click)="showDetails(movie.MovieId)">
+                        {{buttonText[1]}}
+                    </a>
+
+    </div>
+    <div class="card-read-more btn-danger">
+        <a class="btn " href="#" (click)="deleteCard(movie)">
+                         {{buttonText[0]}}
+                    </a>
+
+    </div>
+</div>

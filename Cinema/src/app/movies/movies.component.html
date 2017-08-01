@@ -1,0 +1,20 @@
+<div class="container" style="margin-top:70px" (promotions)="takeDiscount($event)">
+  <div *ngIf="!movies?.length">
+    <h1>You deleted all Movies</h1>
+  </div>
+
+  <p>Select components to delete</p>
+  <label class="switch">
+  <input type="checkbox"   (change)='enableCheckbox($event);'>
+  <span class="slider round"></span>
+ 
+</label>
+  <div class="row">
+    <!-- <div *ngIf = "true"><h1>You Deleted all movies</h1></div>-->
+    <div class="col-xs-12 col-sm-{{12/movies?.length}} col-md-{{12/movies?.length}}" *ngFor="let eachMovie of movies">
+      <span></span>
+      <app-movie [movie]="eachMovie" [movies]="movies" [checked] = "showCheckBox"></app-movie>
+      
+    </div>
+  </div>
+</div>
